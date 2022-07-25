@@ -57,6 +57,9 @@ blocks:
             - make local-test
 
   - name: Integration Tests
+    matrix:
+    - env_var: ARCH
+      values: [ "arm64", "amd64" ]
     run:
       when: "branch =~ '.*' OR pull_request =~ '.*'"
     task:
