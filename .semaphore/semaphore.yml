@@ -7,7 +7,7 @@ agent:
     os_image: ubuntu1804
 
 auto_cancel:
-  running:
+  running: 
     when: "branch != 'master'"
 
 fail_fast:
