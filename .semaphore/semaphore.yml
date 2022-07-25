@@ -1,6 +1,6 @@
 version: v1.0
 name: Traefik Mesh Pipeline
-
+ 
 agent:
   machine:
     type: e1-standard-2
@@ -30,7 +30,7 @@ blocks:
       when: "branch =~ '.*' OR pull_request =~ '.*'"
     task:
       jobs:
-        - name: Cache Go dependencies 
+        - name: Cache Go dependencies
           commands:
             - cache restore
             - go mod tidy
