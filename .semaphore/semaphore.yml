@@ -15,8 +15,6 @@ fail_fast:
     when: "branch != 'master'"
 
 global_job_config:
-  secrets:
-    - name: dockerhub-pull-secrets
   prologue:
     commands:
       - curl -sSfL https://raw.githubusercontent.com/ldez/semgo/master/godownloader.sh | sudo sh -s -- -b "/usr/local/bin"
