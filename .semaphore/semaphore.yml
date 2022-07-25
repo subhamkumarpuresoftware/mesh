@@ -71,6 +71,7 @@ blocks:
           matrix:
           - env_var: ARCH
             values: [ "arm64", "amd64" ]
+            
           commands:
             - "make test-integration-nobuild TESTFLAGS=\"-check.f ACLEnabledSuite\""
         - name: ACL Disabled Suite
