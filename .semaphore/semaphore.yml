@@ -57,9 +57,6 @@ blocks:
             - make local-test
 
   - name: Integration Tests
-    matrix:
-    - env_var: ARCH
-      values: [ "arm64", "amd64" ]
     run:
       when: "branch =~ '.*' OR pull_request =~ '.*'"
     task:
@@ -71,6 +68,9 @@ blocks:
           - docker load < traefik-mesh-img.tar
       jobs:
         - name: ACL Enabled Suite
+          matrix:
+          - env_var: ARCH
+            values: [ "arm64", "amd64" ]
           commands:
             - "make test-integration-nobuild TESTFLAGS=\"-check.f ACLEnabledSuite\""
         - name: ACL Disabled Suite
