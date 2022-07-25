@@ -30,7 +30,7 @@ blocks:
       when: "branch =~ '.*' OR pull_request =~ '.*'"
     task:
       jobs:
-        - name: Cache Go dependencies
+        - name: Cache Go dependencies 
           commands:
             - cache restore
             - go mod tidy
